@@ -1,0 +1,101 @@
+Actividad Repaso 1.1 (Java)
+
+Crea una clase Ejercicio_Piscina que sirva para calcular el aforo de una piscina comunitaria.
+Con las medidas de seguridad derivadas de la situación sanitaria que atravesamos por motivos del COVID-19,
+las comunidades de vecinos han de regular la afluencia a sus piscinas comunitarias. Para ello han de calcular:
+la superficie de la piscina (del vaso que contiene el agua)
+la superficie de la parcela aledaña a la piscina
+
+Se reservarán 2 metros cuadrados por persona para asegurar la distancia interpersonal.
+Para calcular el aforo de la piscina comunitaria habrá que dividir cada una de las superficies calculadas anteriormente entre 2 y se escogerá el menor de los dos resultados.
+
+Por ejemplo :
+Superficie de la piscina: 7m x 5m → 35m2 ; dividimos entre 2 → 17
+Superficie de la parcela: 10m x 15m → 150m2; dividimos entre 2 → 75
+Escogemos el menor de {17, 75} → 17
+Aforo: 17 personas
+
+Añade el código necesario a Ejercicio_Piscina.java para que pida por teclado:
+
+La longitud de la piscina
+La anchura de la piscina
+La longitud de la parcela
+La anchura de la parcela
+Para longitud y anchura se esperan únicamente enteros, pero ha de contemplarse el caso de que introduzcan otro tipo de datos y sin que esto interrumpa
+la ejecución del programa con una excepción.
+
+Si se introduce un dato que no es un entero, el programa debe informar de que solo se permiten enteros e insistir demandando el mismo dato.
+Finalmente ha de calcular el aforo de la piscina comunitaria y mostrarlo por consola.
+
+Recuerda utilizar constantes en lugar de números en el medio del código.
+
+
+
+Actividad Repaso 1.2 (Java)
+Como continuación al ejercicio anterior, para gestionar el aforo, la comunidad ha establecido 6 franjas horarias
+Franja1 → 08:00h -10:00h
+Franja2 → 10:00h- 12:00h
+Franja3 → 12:00h -14:00h
+Franja4 → 14:00h- 16:00h
+Franja5 → 16:00h -18:00h
+Franja6 → 18:00h- 20:00h
+
+La comunidad ha decidido establecer una política de reservas, donde para cada franja horaria se establecerá un máximo de personas
+igual al aforo calculado previamente. Modifica el fichero Ejercicio_Piscina.java para que, tras calcular el aforo, se permita reservar
+plaza en una franja horaria. Para ello:
+
+a)crea un array bidimensional reservasPorFranja que guarde para cada franja horaria, el dni del solicitante.
+
+b)Crea un método reservar que solicite de forma continua por teclado:
+
+    i)El número de la franja en la que se desea reservar. Debe ser un entero del 1 al 6. Si no es así, se debe mostrar un mensaje
+    al usuario informándole de que se debe introducir un entero del 1 al 6 e insistir solicitando la franja de la reserva.
+
+     ii)Si hay plazas disponibles en la franja horaria solicitada, se debe solicitar por teclado el dni del solicitante.
+     El dni deberá tener una longitud de 9 caracteres: los 8 primeros han de ser dígitos (del 0 al 9) y el último ha de ser una letra.
+     Si el dni no es válido, se debe mostrar un mensaje al usuario informándole de la entrada esperada e insistir preguntando por el dni.
+
+                   - Si el dni es válido, se añade el dni de la persona solicitante en la primera posición vacía del array reservasPorFranja
+                    para la franja solicitada y se informa del éxito de la operación.
+
+     iii)Si no se encontrara ninguna posición vacía en la la franja solicitada, se ha de informar al usuario de que
+     no hay plazas libres en la franja solicitada y ya no se solicitará el dni.
+
+c)Modifica el método reservar para que no se permita que un mismo dni realice más de una reserva en todas las franjas horarias.
+
+
+Actividad 1.2: Flujos de bytes y caracteres
+1.Clona el proyecto Actividad-Repaso-1.2-Java y renómbralo a UD1_Actividad1.2
+
+Vamos a crear programáticamente un fichero de configuración para la aplicación de la Piscina.
+Para ello, crea un nuevo paquete repaso.config  y dentro del paquete crea una clase Config. En ella:
+
+   a)Crea un método crearConfigFile(HashMap<String, String> mapa, String rutaFichero) que:
+        -Reciba un mapa de cadenas de texto en formato clave-valor
+
+        -Cree un fichero basado en caracteres en la rutaFichero
+
+        -Por cada par clave-valor, debe añadir un nueva línea en el fichero con el formato clave=valor
+
+Desde el método main, averigua si existe el fichero piscina.config (define una constante). Si no existe piscina.config,
+crea un HashMap con los siguientes pares clave valor y crea el fichero con el siguiente contenido en el directorio actual del proyecto.
+Su contenido deberá ser:
+
+        start=true
+
+        persistencia=true
+
+        max_franjas=4
+
+2. Crea un método  leerConfig(String rutaFichero, String clave) que lea el fichero de configuración piscina.config
+ y encuentre el valor de la clave dada por parámetro. Si la encuentra devuelve el valor. Si no, devuelve null.
+
+3. Crea un paquete repaso.persistencia y dentro una clase FilePersistencia con un método  write(Piscina object, String ruta)
+que sea capaz de guardar un objeto de tipo piscina en un archivo con la ruta especificada
+
+4. Añade un método Piscina read(String ruta) que sea capaz de leer los datos del fichero con la ruta especificada
+y obtener un objeto de tipo Piscina. Si lo consigue, deberá mostrar los datos de la Piscina (Ayúdate del método toString())
+
+5. Modifica el main para que, si existe el fichero donde has escrito el objeto piscina,
+no se pidan por teclado los datos de la piscina y se lean directamente del fichero.
+ Si hay algún error en la lectura, se deberán pedir los datos por teclado.

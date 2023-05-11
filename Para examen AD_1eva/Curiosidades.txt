@@ -1,0 +1,17 @@
+CURIOSIDADES:
+
+1.- devolver la clave generada por un PreparedStatement esta en el ejercicio Tarea02_1repetida,
+en la clase AccountSQLServerDao en el metodo transferir.
+
+2.- Implementar un metodo en service (VER AQUI:Tarea02_1repetida)
+
+a) Se pone el metodo tal cual en el IServicio y en el IDao (ejemplos IEmpleadoServicio, IEmpleadoDao)
+b) Te van a pedir sus respectivas clases que implementes el metodo (EmpleadoService, EmpleadoSQLServerDao)
+c) En el servicio (EmpleadoService) return this.empleadoDao.transferir(arg1, arg2, ...);
+d) En el DAO (EmpleadoSQLServerDao) haces el metodo.
+
+3.- Encontrar los procedimientos almacenados en el Microsoft SQL Server:
+a) Abres la base de datos con la que trabajar.
+b) Programmability (ahi estan los procedimentos)
+c) Copias el nombre.
+

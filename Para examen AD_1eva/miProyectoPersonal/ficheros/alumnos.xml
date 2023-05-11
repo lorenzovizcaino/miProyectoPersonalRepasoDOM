@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Alumnos>
+    <Alumno id="2">
+        <Nombre>fgfgfg</Nombre>
+        <DNI>45656565</DNI>
+        <Edad>45</Edad>
+        <Curso>fgfgfg</Curso>
+        <Repite>true</Repite>
+    </Alumno>
+    <Alumno id="34">
+        <Nombre>Luis</Nombre>
+        <DNI>45454545</DNI>
+        <Edad>34</Edad>
+        <Curso>2 Sir</Curso>
+        <Repite>true</Repite>
+    </Alumno>
+    <Alumno id="45">
+        <Nombre>Luis Merino</Nombre>
+        <DNI>45477877S</DNI>
+        <Edad>34</Edad>
+        <Curso>2 ASIR</Curso>
+        <Repite>true</Repite>
+    </Alumno>
+</Alumnos>

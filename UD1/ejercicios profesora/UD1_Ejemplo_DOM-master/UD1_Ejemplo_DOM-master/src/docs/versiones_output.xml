@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<versiones>
+    <version numero="1.0">
+        <nombre>nombreA</nombre>
+        <api>2</api>
+    </version>
+    <version numero="1.5">
+        <nombre>nombreB</nombre>
+        <api>3</api>
+    </version>
+    <version numero="2.0">
+        <nombre>nombreC</nombre>
+        <api>4</api>
+    </version>
+</versiones>

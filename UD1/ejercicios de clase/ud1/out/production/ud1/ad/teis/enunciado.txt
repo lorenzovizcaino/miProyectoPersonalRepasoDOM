@@ -1,0 +1,52 @@
+ Crea un nuevo proyecto UD1_Actividad1.3
+
+1. Crea en un paquete ad.teis.model una clase Persona que tenga los siguientes datos:
+
+Un identificador numérico de tipo long.
+Un dni con 8 números y un carácter [A-Z]
+La edad
+El salario (como float)
+Añade constructor, getters y setters.
+
+
+
+2. Crea una interfaz Persistencia con un par de métodos:
+
+- void escribirPersona(Persona persona, String ruta)     Escribe los atributos de Persona, de uno en uno, en un fichero establecido por ruta.
+- Persona leerDatos(String ruta)                         Lee del fichero ruta, los atributos de Persona, de uno en uno, en el mismo orden que se han escrito.
+                                                         Con ellos, crea un objeto de tipo Persona.
+
+3. Crea una clase DataIOPersistencia que implemente la interfaz Persistencia con DataInputStream y DataOutputStream.
+
+4. Prueba, desde un Main que tu aplicación es capaz de leer correctamente los datos de una Persona.
+
+5. Crea una clase RandomAccessPersistencia que implemente la interfaz Persistencia con RandomAccessFile
+
+6. Prueba, desde un Main que tu aplicación es capaz de leer correctamente los datos de una Persona.
+
+
+7. En la clase RandomAccessPersistencia añade los siguientes métodos públicos:
+
+a) void escribirPersonas(ArrayList<Persona> personas, String ruta): debe escribir los datos de todas las personas  en el mismo orden que escribirPersona.
+Si el fichero tiene datos, debe comenzar a escribir desde el final y no sobreescribir todo el fichero. Prueba desde el Main el método.
+
+b) ArrayList<Persona> leerTodo(String ruta): debe leer un fichero desde el principio y construir un ArrayList de Persona. Prueba desde el Main el método.
+
+c)  Persona leerPersona(int posicion, String ruta): debe posicionarse en la persona que ocupa la posición indicada por el parámetro posicion
+y devolver un objeto Persona con los datos correspondientes. Si posicion = 1, el puntero del fichero deberá situarse en el byte 0, si posicion =2,
+el puntero debe situarse en el byte= número de bytes que ocupa cada persona, etc. Prueba desde el Main el método.
+
+d) Persona add(int posicion, String ruta, Persona persona): debe añadir un objeto Persona en la posición indicada. La posicion =1, indica posicionarse en el byte cero,
+etc. Si ya existía una persona en esa posición, se sobrescribirá. Prueba desde el Main el método.
+
+e) float sumarSalario(int posicion, String ruta, float incremento): debe situarse en la Persona que ocupa la posicion indicada (mismas consideraciones
+que en los apartados anteriores con posición), leer su salario e incrementarlo en la cantidad incremento. Devuelve el nuevo salario. Prueba desde el Main el método.
+
+f) boolean borrar(int posicion, String ruta, boolean borrado): En lugar de borrar un registro físicamente, vamos a marcarlo como borrado
+con un campo booleano indicando si está borrado o no. Para ello, tendremos que añadir un atributo borrado a la clase Persona y modificar los métodos
+que hemos creado para escribir y leer ese campo. Tendremos que tener en cuenta que se modifica la longitud en bytes del registro de una objeto Persona.
+El método borrar buscará en el fichero indicado por ruta, la Persona en la posición indicada en el parámetro y establecerá el valor borrado en el fichero.
+Prueba desde el Main el método.
+
+g) Añade un atributo nombre a Persona. Se ha convenido que para el nombre no se utilizarán más de 100 caracteres, aunque la longitud específica de un nombre
+ puede variar. Modifica los métodos de RandomAccessPersistencia para que escriba y lea con writeUTF y readUTF el nombre.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/entregas" isTestSource="false" packagePrefix="ad.teis.persistencia" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ud1" />
+    <orderEntry type="module" module-name="Tarea 01.1Nueva abrir con NetBeans" />
+    <orderEntry type="module" module-name="Tarea 01.1No se entrega" />
+  </component>
+</module>

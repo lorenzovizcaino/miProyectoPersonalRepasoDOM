@@ -1,0 +1,20 @@
+Ejercicios de repaso:  file,files,filewriter,DataIO, ObjectIO
+ud1: RandomAcessFile
+Ud1_Actividad1.5: Leer SAX y DOM
+miProyectoPersonal: escribir con DOM (modo mio + modo Maria)
+Actividad2.6: DAO , SQL y procedimientos almacenados.
+Tarea01_2_repetida: tarea(leer DOM y ObjectIO)
+Tarea02_1_repetida: tarea (DAO)
+Tarea01_1Nueva_repetida: DataIO (con StringBuffer y writechars), files.
+Tarea 01.1No se entrega: RandomAcessFile.
+pruebas:  RandomAcessFile.
+
+
+
+
+
+
+
+
+
+
